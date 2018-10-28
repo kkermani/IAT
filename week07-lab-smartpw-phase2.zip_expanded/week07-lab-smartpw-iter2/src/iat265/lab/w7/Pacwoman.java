@@ -16,7 +16,7 @@ import processing.core.PVector;
 public class Pacwoman {
 	
 	protected PVector pos, speed;				//position and speed
-	private float maxSpeed;					//speed limit
+	public float maxSpeed;					//speed limit
 	protected Dimension dimension;				//dimension, includes width and height
 	protected float scale;						//size
 	private Color color;						//main color
@@ -145,8 +145,12 @@ public class Pacwoman {
 		return pos;
 	}
 
-	protected void tracefish(ArrayList<Pacwoman> pList) {
+	//protected void traceBestFish(ArrayList<Pacwoman> pList) {
 		// TODO Auto-generated method stub
 		
-	}
+	
+public float getSize() {
+	return scale;
+}
+
 }

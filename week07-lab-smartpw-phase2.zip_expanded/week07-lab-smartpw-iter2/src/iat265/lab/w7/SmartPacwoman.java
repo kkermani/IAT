@@ -58,17 +58,23 @@ public class SmartPacwoman extends Pacwoman{
 		g.setTransform(at);
 	}
 	
-	@Override
-	protected void traceBestFood(ArrayList<Food> fList) {	
-		if (fList.size()>0) {
+	protected void attractedBy(Pacwoman target) {
+		float coef = .2f;	// coefficient of acceleration relative to maxSpeed
+		PVector direction = PVector.sub(target.getPos(), pos).normalize();
+		//PVector acceleration = PVector.mult(direction, maxSpeed*coef);
+		//speed.add(//acceleration);
+	}
+	
+	protected void traceBestFish(ArrayList<Pacwoman> pList) {	
+		if (pList.size()>0) {
 			
 			// set the 1st item as default target
-			Food target = fList.get(0);
+			Pacwoman target = pList.get(0);
 			float targetAttraction = this.getAttraction(target);
 			
 			// find the closer one
-			for (Food f:fList) if (this.getAttraction(f) > targetAttraction) {
-				target = f;
+			for (Pacwoman P:pList) if (this.getAttraction(P) > targetAttraction) {
+				target = P;
 				targetAttraction = this.getAttraction(target);
 			}
 			
@@ -77,8 +83,8 @@ public class SmartPacwoman extends Pacwoman{
 		}	
 	}
 	
-	protected float getAttraction(Food f) {
-		return f.getSize()*10/PVector.dist(pos, f.getPos());
+	protected float getAttraction(Pacwoman p) {
+		return p.getSize()*10/PVector.dist(pos, p.getPos());
 	}
 
 }
