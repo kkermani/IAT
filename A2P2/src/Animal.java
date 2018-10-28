@@ -22,6 +22,7 @@ public class Animal {
 	private final int SIZE_Y = 110;
 	
 	private final int INIT_ENERGY = 100;
+	private Polygon tail;
 	
 	public Animal(PVector pos, float size) {
 		this.pos = new PVector(pos.x, pos.y);
@@ -49,10 +50,10 @@ public class Animal {
 	public void setAnimalAttributes() {
 		body = new Arc2D.Double(- dim.getWidth() / 2, - dim.getHeight() / 2, (double) dim.getWidth(), (double) dim.getHeight() , (double) 25, (double) 310, Arc2D.PIE);
 		eye = new Ellipse2D.Double(3/5 * dim.getWidth()/2, -dim.getHeight()/3,20,20);
-		//int [] xCoords = {0, (int) (-3/2 * dim.getWidth()/2)  , (int) (-4/3 * dim.getWidth()/2)  , (int) (-3/2 * dim.getWidth()/2) , (int) (-4/3 * dim.getWidth()/2) ,(int) (-3/2 * dim.getWidth()/2)};
-		//int [] yCoords = {0, (int) (-2/3 * dim.getHeight()/2) , (int) (-3/4 * dim.getHeight()/2) ,                    0            , (int) (3/4 * dim.getHeight()/2) , (int) (2/3 * dim.getHeight()/2)};
+		int [] xCoords = {0, (int) (-3/2 * dim.getWidth()/2)  , (int) (-4/3 * dim.getWidth()/2)  , (int) (-3/2 * dim.getWidth()/2) , (int) (-4/3 * dim.getWidth()/2) ,(int) (-3/2 * dim.getWidth()/2)};
+		int [] yCoords = {0, (int) (-2/3 * dim.getHeight()/2) , (int) (-3/4 * dim.getHeight()/2) ,                    0            , (int) (3/4 * dim.getHeight()/2) , (int) (2/3 * dim.getHeight()/2)};
 		
-		//tail = new Polygon(xCoords,yCoords,xCoords.length);
+		tail = new Polygon(xCoords,yCoords,xCoords.length);
 		
 		box = new Area(body);
 		
@@ -107,6 +108,11 @@ public class Animal {
 		g.fill(body);
 		g.setColor(color.WHITE);
 		g.fill(eye);
+		
+		g.setColor(color.RED);
+		g.fill(tail);
+		
+		
 		g.setTransform(at);
 	}
 	
@@ -118,6 +124,9 @@ public class Animal {
 		
 		g.setColor(color.RED);
 		g.fill(body);
+		
+		
+		
 		
 		g.setTransform(at);
 	}
