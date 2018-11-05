@@ -41,7 +41,7 @@ public class Predator extends Fish{
 		super.draw(g);
 		
 		AffineTransform at = g.getTransform();		
-		g.translate(pos.x, pos.y);
+		g.translate(position.x, position.y);
 		g.rotate(speed.heading());
 		g.scale(scale, scale);
 		if (speed.x < 0) g.scale(1, -1);
@@ -53,7 +53,7 @@ public class Predator extends Fish{
 		g.fill(tail);
 		
 		//draw badge
-		eye = new Ellipse2D.Double(dimension.width/3, -dimension.height/3, dimension.width/15, dimension.width/15);
+		eye = new Ellipse2D.Double(width/3, -height/3, width/15, width/15);
 		g.setColor(Color.red);
 		g.fill(eye);
 		
