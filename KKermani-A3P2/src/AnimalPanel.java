@@ -100,11 +100,9 @@ public class AnimalPanel extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2= (Graphics2D) g;
-		Color sea = new Color(0, 105, 148);
-		Color gound =new Color(255, 204, 102);
+		Color sea = new Color(0, 148, 117);
 		setBackground(sea);
-		g2.setColor(gound);
-		g2.fillRect(0, 550, pnlSize.width, pnlSize.height);
+		
 
 		for (Food food : FoList) {
 			food.draw(g2);

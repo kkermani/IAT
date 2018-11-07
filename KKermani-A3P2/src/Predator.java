@@ -160,7 +160,7 @@ public class Predator extends Animal{
 			
 			g2.fill(eye);
 			
-			
+			g2.setColor(Color.red);
 			g2.setTransform(tf);
 			drawInfo(g2);
 }
@@ -173,14 +173,12 @@ public void drawInfo(Graphics2D g) {
 	Font f = new Font("Arial", Font.BOLD, 12); 
 	g.setFont(f); 
 	String st = String.format("%.2f Speed ", val); 
-	String sp = String.format(" ", val); 
 	String sv = String.format("%.2f Energy ", life); 
 
 	//		String st = String.format("%d", size); 
 	FontMetrics metrics = g.getFontMetrics(f); 
-	g.drawString(st, -metrics.stringWidth(st)/2, -size*1.5f); 
-	g.drawString(sp, -metrics.stringWidth(sp)/2, -size*1.7f); 
-	g.drawString(sv, -metrics.stringWidth(sv)/2, -size*1.7f); 
+	g.drawString(st, -metrics.stringWidth(st)/2, -size*25.5f); 
+	g.drawString(sv, -metrics.stringWidth(sv)/2, -size*17.0f); 
 
 	g.setTransform(at);
 }

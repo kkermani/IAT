@@ -156,6 +156,7 @@ public  class Fish extends Animal{
 			
 			g2.fill(pupil);
 			
+			g2.setColor(Color.white);
 			g2.setTransform(tf);
 			drawInfo(g2);
 }
@@ -172,7 +173,7 @@ public  class Fish extends Animal{
 	//		String st = String.format("%d", size); 
 	FontMetrics metrics = g2.getFontMetrics(f); 
 	g2.drawString(st, -metrics.stringWidth(st)/2, -size*1.2f); 
-	g2.drawString(sv, -metrics.stringWidth(sv)/2, -size*1.4f); 
+	g2.drawString(sv, -metrics.stringWidth(sv)/2, -size*2.0f); 
 
 	g2.setTransform(at);
 }
