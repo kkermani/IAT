@@ -198,20 +198,9 @@ public class AnimalPanel extends JPanel implements ActionListener {
 				}
 			}
 		}
-		if(mouseButtonState)
-		{
-			FoList.add(new Food((int)mousePosition.x,(int)mousePosition.y,100));
-			for (int i=0;i<FoList.size();i++) {
-				Food fishFood=FoList.get(i);
-				if (fishFood.checkMouseHit(mousePosition) && isControlDown) {
-					FoList.remove(i);
-				}
-				else if (fishFood.checkMouseHit(mousePosition)) {
-					fishFood.enlarge();
-				}
-			} 
+		
 			
-		}
+		
 		while (FoList.size() < FoNum) 
 			FoList.add(new Food((int)Util.random(100, 700),(int)Util.random(100, 500),190));
 		

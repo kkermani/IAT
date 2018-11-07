@@ -32,7 +32,7 @@ public class Predator extends Animal{
 	private boolean selected;
 	
 	private Color colour;
-	private Color Pcolor;
+	
 	public Double body;
 	private Ellipse2D.Double eye;	//the eye
 	
@@ -54,7 +54,7 @@ public class Predator extends Animal{
 		this.dim = new PVector(0,0);
 		this.aim =dim.copy();
 		this.colour = Util.randomColour();
-		this.Pcolor = Util.randomPColour();
+	
 		this.selected=false;
 		life = FULL_ENERGY;
 		
@@ -108,6 +108,7 @@ public class Predator extends Animal{
 		dim.add(acceleration);
 	}
 	
+	
 	public Shape getBoundary() {
 		AffineTransform at = new AffineTransform();		
 		at.translate(pos.x, pos.y);
@@ -117,6 +118,8 @@ public class Predator extends Animal{
 		return at.createTransformedShape(Box);
 	}
 
+
+	
 	public Shape getFOV() {
 		AffineTransform at = new AffineTransform();
 		at.translate(pos.x, pos.y);
