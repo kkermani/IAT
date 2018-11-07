@@ -89,7 +89,7 @@ public class AnimalPanel extends JPanel implements ActionListener {
 		// TODO Auto-generated method stub
 		return new Fish((float)Util.random(100, pnlSize.width-100), //random x coord
 				(float)Util.random(100, pnlSize.height-100) //random y coord
-				,100.0f, // width
+				,300.0f, // width
 				180.0f, // height
 				20, //size
 				sc);
@@ -100,9 +100,9 @@ public class AnimalPanel extends JPanel implements ActionListener {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		Graphics2D g2= (Graphics2D) g;
-		Color myBlue = new Color(77, 184, 255);
+		Color sea = new Color(0, 105, 148);
 		Color gound =new Color(255, 204, 102);
-		setBackground(myBlue);
+		setBackground(sea);
 		g2.setColor(gound);
 		g2.fillRect(0, 550, pnlSize.width, pnlSize.height);
 
@@ -229,7 +229,7 @@ public class AnimalPanel extends JPanel implements ActionListener {
 	private Predator generateNewPred() {
 		return new Predator((int)Util.random(100, pnlSize.width-100),
 				(float)Util.random(100, pnlSize.height-100),
-				100.0f, // width
+				300.0f, // width
 				180.0f, // height
 				2, //size
 				sc);

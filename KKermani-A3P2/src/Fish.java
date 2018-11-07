@@ -34,7 +34,7 @@ public  class Fish extends Animal{
 	private Color colour;
 	private Color Pcolor;
 	public Double body;
-	private Ellipse2D.Double eye;	//the eye
+	private Ellipse2D.Double eye;	
 	private Ellipse2D.Double pupil;
 	private Polygon fins;
 	private float FoSize;
@@ -148,9 +148,13 @@ public  class Fish extends Animal{
 			g2.fill(body);
 			
 			//eye
-			g2.setColor(Color.black);
+			g2.setColor(Color.white);
 			
 			g2.fill(eye);
+			
+			g2.setColor(Color.black);
+			
+			g2.fill(pupil);
 			
 			g2.setTransform(tf);
 			drawInfo(g2);
