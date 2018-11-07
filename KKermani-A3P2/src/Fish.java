@@ -54,11 +54,13 @@ public  class Fish extends Animal{
 		this.colour = Util.randomColour();
 		this.Pcolor = Util.randomPColour();
 		this.selected=false;
-		this.life = 100;
+		this.life = 150;
 		
-		if (sc < 0.3) this.maxSpeed = (float) 0.9;		
-		else this.maxSpeed= (float) .1;					
+		if (sc < 0.4) this.maxSpeed = (float) 0.6;		
+		else this.maxSpeed= (float) .3;					
 		
+		
+		this.selected=false;
 		setShapeAttributes();
 		
 		}
@@ -158,7 +160,40 @@ public  class Fish extends Animal{
 			
 			g2.setColor(Color.white);
 			g2.setTransform(tf);
-			drawInfo(g2);
+			if(selected) {
+				drawInfo(g2);}
+			
+			else if(life<2) {
+				AffineTransform tf2 = g2.getTransform();
+				g2.translate(pos.x, pos.y);
+				g2.rotate(dim.heading());
+				g2.rotate(Math.toRadians(90));
+				g2.scale(sc-0.1,sc);
+				
+				if (spd.x < 0)  g2.scale(-1, 1);
+				
+				//tail
+				g2.setColor(colour.red);
+				g2.fill(fins);
+				
+				//body
+				g2.setColor(colour);
+				g2.fill(body);
+				
+				//eye
+				g2.setColor(Color.white);
+				
+				g2.fill(eye);
+				
+				g2.setColor(Color.black);
+				
+				g2.fill(pupil);
+				
+				g2.setColor(Color.white);
+				g2.setTransform(tf2);
+				if(selected) {
+					drawInfo(g2);}
+			}
 }
 	}
 

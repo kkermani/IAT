@@ -35,7 +35,7 @@ public class Predator extends Animal{
 	private Color Pcolor;
 	public Double body;
 	private Ellipse2D.Double eye;	//the eye
-	private Ellipse2D.Double pupil;
+	
 	private Polygon fins;
 	private float FoSize;
 	
@@ -75,7 +75,7 @@ public class Predator extends Animal{
 		// TODO Auto-generated method stub
 		body = new Arc2D.Double( -width/2, -height/2, width, height, 25, 330, Arc2D.PIE);
 		eye = new Ellipse2D.Double(width/3, -height/3, width/15, width/15);
-		pupil = new Ellipse2D.Double(5 + width/3, 5 - height/3, width/30, width/30);
+		
 		
 		int[] tx = {(int) width/4, -(int) width/2, - (int) width/5, -(int) width/2};
 		int[] ty = {20, - (int) height, 0,(int) height};
