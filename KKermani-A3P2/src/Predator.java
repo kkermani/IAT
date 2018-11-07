@@ -138,7 +138,7 @@ public class Predator extends Animal{
 
 
 	public void draw(Graphics2D g2) {
-		if(life > 2) {
+		if(life > 500) {
 			AffineTransform tf = g2.getTransform();
 			g2.translate(pos.x, pos.y);
 			g2.rotate(dim.heading());
@@ -162,10 +162,38 @@ public class Predator extends Animal{
 			
 			g2.setColor(Color.red);
 			g2.setTransform(tf);
-			drawInfo(g2);
+			if(selected)
+				drawInfo(g2);
 }
-	}
+		else{
+			AffineTransform tf2 = g2.getTransform();
+			g2.translate(pos.x, pos.y);
+			g2.rotate(dim.heading());
+			g2.rotate(Math.toRadians(90));
+			g2.scale(sc,sc);
 
+if (spd.x < 0) 
+	
+	g2.scale(-1, 1);
+			
+			
+			g2.setColor(colour.white.darker());
+			g2.fill(fins);
+			
+			//body
+			g2.setColor(colour.white);
+			g2.fill(body);
+			
+			//eye
+			g2.setColor(Color.red);
+			
+			g2.fill(eye);
+			
+			g2.setColor(Color.red);
+			g2.setTransform(tf2);
+			if(selected)
+				drawInfo(g2);}
+		}
 
 public void drawInfo(Graphics2D g) {
 	AffineTransform at = g.getTransform();
